@@ -34,7 +34,7 @@ class Program
         {
             sign = ("+");
         }
-        else if (remainder <3 && grade >= 60)
+        else if (remainder <=3 && grade >= 60)
         {
             sign = ("-");
         }
