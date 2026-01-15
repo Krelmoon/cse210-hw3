@@ -4,8 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal myJournal = new Journal();  
+        Entry newEntry = new Entry(string.Empty, string.Empty);
+        newEntry.Display();
+        PromptGenerator promptGen = new PromptGenerator();
         string userInput;
         int userNumber;
+        string randomPrompt;
         do
         {
             Console.WriteLine("Please select one of the following choices:");
@@ -19,11 +24,15 @@ class Program
             userNumber = int.Parse(userInput);
             if (userNumber == 1)
             {
-                Console.WriteLine("Write Prompt");
+                randomPrompt = promptGen.GetRandomPrompt();
+                    Console.WriteLine(randomPrompt);
+                    Console.Write("> ");
+                    userInput = Console.ReadLine();
+                    myJournal.AddEntry(randomPrompt, userInput);
             }
             else if (userNumber == 2)
             {
-                Console.WriteLine("Display Prompt");
+                myJournal.DisplayAll();
             }
             else if (userNumber == 3)
             {
