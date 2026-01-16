@@ -1,14 +1,20 @@
 using System.IO;
+using System;
+using System.Collections.Generic;
+// Journal class to manage journal entries
 public class Journal
 {
+    // List to store journal entries
     public List<Entry> _entries = new List<Entry>();
 
+    // Method to add a new entry to the journal
     public void AddEntry(string prompt, string userInput)
     {
         Entry newEntry = new Entry(prompt, userInput);
         _entries.Add(newEntry);
     }
 
+    // Method to display all journal entries
     public void DisplayAll()
     {
         foreach (Entry entry in _entries)
@@ -18,6 +24,7 @@ public class Journal
             }
     }
 
+    // Method to save journal entries to a file
     public void SaveToFile(string file)
     {
         Console.WriteLine("What is the filename? ");
@@ -31,6 +38,7 @@ public class Journal
         }
     }
 
+    // Method to load journal entries from a file
     public void LoadFromFile(string file)
     {
         Console.WriteLine("What is the filename? ");

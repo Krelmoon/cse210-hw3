@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
+// PromptGenerator class to provide journal prompts
 public class PromptGenerator
 {   
+    // List to store prompts
     public List<string> _prompts = new List<string>();
+    // Random number generator
     public Random random = new Random{};
+    // HashSet to track assigned prompt indices
     public HashSet<int> _assignedIndex = new HashSet<int>();
         
-
+        // Method to get a random prompt
         public string GetRandomPrompt()
         {   
             _prompts.Add("Who was the most interesting person I interacted with today?");
@@ -14,6 +18,13 @@ public class PromptGenerator
             _prompts.Add("How did I see the hand of the Lord in my life today?");
             _prompts.Add("What was the strongest emotion I felt today?");
             _prompts.Add("If I had one thing I could do over today, what would it be?");
+            _prompts.Add("What did you eat today that you really enjoyed?");
+            _prompts.Add("What is a new skill you learned today?");
+            _prompts.Add("What made you smile today?");
+            _prompts.Add("What is something you accomplished today that you are proud of?");
+            _prompts.Add("What is a challenge you faced today and how did you overcome it?");
+            _prompts.Add("What was the weather like and how did that affect your day?");
+            
 
             // to insure that prompts are not assigned more than once each session
             int _promptsLen = _prompts.Count;
