@@ -36,11 +36,11 @@ class Program
             }
             else if (userNumber == 3)
             {
-                Console.WriteLine("Load Entry");
+                myJournal.LoadFromFile("");
             }
             else if (userNumber == 4)
             {
-                Console.WriteLine("Save Entry");
+                myJournal.SaveToFile("");
             }
             else if (userNumber == 5)
             {
