@@ -2,21 +2,23 @@ public class Customer
 {
     // attributes
     private string _name;
-    private string _email;
-    private string _phoneNumber;
+    private Address _address;
 
     // constructor
-    public Customer(string name, string email, string phoneNumber)
+    public Customer(string name, Address address)
     {
         _name = name;
-        _email = email;
-        _phoneNumber = phoneNumber;
+        _address = address;
     }
 
     // methods
+    public bool IsUSCustomer()
+    {
+        return _address.IsUSAddress();
+    }
     public string GetCustomerInfo()
     {
-        return $"Customer Name: {_name}\nEmail: {_email}\nPhone Number: {_phoneNumber}";
+        return $"Customer Name: {_name}\nAddress: {_address.GetAddress()}";
     }
     
 }

@@ -4,20 +4,25 @@ public class Address
     private string _street;
     private string _city;
     private string _state;
-    private string _zipCode;
+    private string _country;
 
     // constructor
-    public Address(string street, string city, string state, string zipCode)
+    public Address(string street, string city, string state, string country)
     {
         _street = street;
         _city = city;
         _state = state;
-        _zipCode = zipCode;
+        _country = country;
     }
 
     // methods
-    public string GetFullAddress()
+
+    public bool IsUSAddress()
     {
-        return $"{_street}, {_city}, {_state} {_zipCode}";
+        return _country.ToLower() == "usa" || _country.ToLower() == "us" || _country.ToLower() == "united states";
+    }
+    public string GetAddress()
+    {
+        return $"{_street}, {_city}, {_state} {_country}";
     }
 }

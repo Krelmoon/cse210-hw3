@@ -4,29 +4,24 @@ public class Product
     private string _name;
     private string _productID;
     private double _price;
-    private int _quantityInStock;
+    private int _quantityToOrder;
 
     // constructor
-    public Product(string name, string productID, double price, int quantityInStock)
+    public Product(string name, string productID, double price, int quantityToOrder)
     {
         _name = name;
         _productID = productID;
         _price = price;
-        _quantityInStock = quantityInStock;
+        _quantityToOrder = quantityToOrder;
     }
 
     // methods
     public string GetProductInfo()
     {
-        return $"Product: {_name}\nProduct ID: {_productID}\nPrice: ${_price}\nQuantity in Stock: {_quantityInStock}";
+        return $"Product: {_name}\nProduct ID: {_productID}\nPrice: ${_price}\nQuantity To Order: {_quantityToOrder}";
     }
-
-    public void UpdateStock(int quantitySold)
+    public double GetTotalCost()
     {
-        _quantityInStock -= quantitySold;
-    }
-    public double GetPrice()
-    {
-        return _price;
+        return _price * _quantityToOrder;
     }
 }
