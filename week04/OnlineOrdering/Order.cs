@@ -21,9 +21,7 @@ public class Order
     {
         double totalCost = 0;
         double shippingCost = 0;
-        foreach (Product product in _products)
-        {
-            if (_customers[0].IsUSCustomer())
+        if (_customers[0].IsUSCustomer())
             {
                 shippingCost = 5.0;
             }
@@ -31,9 +29,12 @@ public class Order
             {
                 shippingCost = 35.0;
             }
-            totalCost += product.GetTotalCost() + shippingCost;
+        foreach (Product product in _products)
+        {
+            
+            totalCost += product.GetTotalCost();
         }
-        return totalCost;
+        return totalCost + shippingCost;
     }
 
     public string GetPackLabel()
