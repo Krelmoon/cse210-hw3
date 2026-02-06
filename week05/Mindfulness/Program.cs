@@ -16,7 +16,8 @@ class Program
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
             Console.WriteLine("3. Start listing activity");
-            Console.WriteLine("4. Quit");
+            Console.WriteLine("4. Start five senses activity");
+            Console.WriteLine("5. Quit");
             Console.Write("Select a choice from the menu? ");
             userInput = Console.ReadLine();
             userNumber = int.Parse(userInput);
@@ -37,6 +38,11 @@ class Program
             }
             else if (userNumber == 4)
             {
+                FiveSensesActivty fiveSensesActivty = new FiveSensesActivty();
+                fiveSensesActivty.Run();
+            }
+            else if (userNumber == 5)
+            {
                 Console.WriteLine("Thank you, Goodbye.");
             }
             else
@@ -44,6 +50,6 @@ class Program
                 // Handle invalid input
                 Console.WriteLine("Please enter a valid choice:");
             }
-        } while (userNumber != 4);    
+        } while (userNumber != 5);    
     }
 }
