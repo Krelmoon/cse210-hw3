@@ -1,15 +1,17 @@
 public class Activity
 {
+    // Private variables to store the name, description, and duration of the activity
     private string _name;
     private string _description;
     private int _duration; // duration in minutes
 
+    // Constructor to initialize the activity with default values
     public Activity()
     {
         _name = "Mindfulness Activity";
         _duration = 0;
     }
-
+    // Method to display the starting message of the activity
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Starting {_name}.");
@@ -19,8 +21,9 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!");
-        Console.WriteLine($"You have completed {_duration} minutes of the {_name}.");
         ShowSpinner(3);
+        Console.WriteLine($"You have completed {_duration} minutes of the {_name}.");
+        ShowSpinner(10);
     }
     public void ShowSpinner(int seconds)
     {

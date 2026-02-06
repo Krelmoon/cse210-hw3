@@ -1,11 +1,12 @@
 public class BreathingActivity : Activity
 {
+    // Constructor to set the name and description of the breathing activity
     public BreathingActivity()
     {
         SetName("Breathing Activity");
         SetDescription("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
     }
-
+    // Method to run the breathing activity
     public void Run()
     {
         Console.Clear();
@@ -25,9 +26,9 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("\nBreathe in...");
+            Console.Write("\nBreathe in...");
             ShowCountDown(4);
-            Console.WriteLine("\nBreathe out...");
+            Console.Write("\nBreathe out...");
             ShowCountDown(6);
         }
 

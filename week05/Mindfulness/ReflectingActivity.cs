@@ -1,17 +1,22 @@
 public class ReflectingActivity : Activity
-{   
+{   // List to store the prompts for the reflecting activity
     private List<string> _prompts = new List<string>();
+    // List to store the questions for the reflecting activity
     private List<string> _questions = new List<string>();
+    // Random object to generate random indices for prompts and questions
     public Random random = new Random{};
     // HashSet to track assigned prompt indices
     public HashSet<int> _assignedIndex = new HashSet<int>();
     // HashSet to track assigned question indices
     public HashSet<int> _assignedQuestionIndex = new HashSet<int>();
+
+    // Constructor to set the name and description of the reflecting activity
     public ReflectingActivity()
     {
         SetName("Reflecting Activity");
         SetDescription("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
     }
+    // Method to run the reflecting activity
     public void Run()
     {
         Console.Clear();
@@ -46,6 +51,7 @@ public class ReflectingActivity : Activity
 
         DisplayEndingMessage();
     }
+    // Method to get a random prompt for the reflecting activity
     public string GetRandomPrompt()
         {   
             _prompts.Add("Think of a time when you felt truly at peace.");
@@ -81,6 +87,7 @@ public class ReflectingActivity : Activity
     
             return _prompts[_promptsIndex];
         }
+        // Method to get a random question for the reflecting activity
         public string GetRandomQuestion()
         {   
             _questions.Add("Why was this experience meaningful to you?");

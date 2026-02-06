@@ -1,21 +1,26 @@
+using System.Runtime.InteropServices;
+
 public class ListingActivity : Activity
 {   
+    // private variable to track the number of items listed by the user
     private int _count;
+    // List to store the prompts for the listing activity
     private List<string> _prompts = new List<string>();
     public Random random = new Random{};
     // HashSet to track assigned prompt indices
     public HashSet<int> _assignedIndex = new HashSet<int>();
-    
+    // Constructor to set the name and description of the listing activity
     public ListingActivity()
     {
         SetName("Listing Activity");
         SetDescription("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
     }
-
+    // Method to run the listing activity
     public void Run()
     {
         Console.Clear();
         DisplayStartingMessage();
+        _count = 0;
         string userInput;
         int userNumber;
         Console.WriteLine("How many minutes would you like to do this activity?");
@@ -27,27 +32,26 @@ public class ListingActivity : Activity
         ShowSpinner(3);
 
         int duration = GetDuration();
-        DateTime endTime = DateTime.Now.AddMinutes(duration);
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddMinutes(duration);
         Console.Clear();
         Console.WriteLine("\nList as many responses as you can to the following prompt:");
-        Console.WriteLine($"{GetRandomPrompt()}");
+        Console.WriteLine($"---{GetRandomPrompt()}---");
         Console.WriteLine("You may begin now!");
 
-        int itemCount = 0;
 
-        while (DateTime.Now < endTime)
+        while (startTime < endTime)
         {
             Console.Write("> ");
-            string response = Console.ReadLine();
-            if (!string.IsNullOrEmpty(response))
-            {
-                itemCount++;
-            }
+            Console.ReadLine();
+            _count += 1;
+            startTime = DateTime.Now;
         }
 
-        Console.WriteLine($"\nYou listed {itemCount} items!");
+        Console.WriteLine($"\nYou listed {_count} items!");
         DisplayEndingMessage();
     }
+    // Method to get a random prompt for the listing activity
     public string GetRandomPrompt()
         {   
             _prompts.Add("Who are people that you appreciate?");

@@ -4,8 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Variable to store user input for menu selection
         string userInput;
+        // Variable to store the user's menu choice as a number
         int userNumber;
+        // Do-while loop to display the menu and process user input until they choose to quit
         do
         {
             Console.Clear();
