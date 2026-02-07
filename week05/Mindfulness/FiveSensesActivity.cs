@@ -7,7 +7,7 @@ public class FiveSensesActivty : Activity
     // Constructor to set the name and description of the five senses activity
     public FiveSensesActivty()
     {
-        SetName("Five Senses Activity");
+        SetName("Five Senses Survey");
         SetDescription("This activity will help you reflect on your surroundings in your life by having you list as many things as you can about the senses you can observe.");
     }
     // Method to run the Five Senses activity

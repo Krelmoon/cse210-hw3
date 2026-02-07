@@ -16,7 +16,7 @@ class Program
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
             Console.WriteLine("3. Start listing activity");
-            Console.WriteLine("4. Start five senses activity");
+            Console.WriteLine("4. Start five senses survey");
             Console.WriteLine("5. Quit");
             Console.Write("Select a choice from the menu? ");
             userInput = Console.ReadLine();
