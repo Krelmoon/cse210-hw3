@@ -1,0 +1,4 @@
+0
+EternalGoal|Pray|Pray every day|50
+SimpleGoal|Cake|eat cake|100|False
+ChecklistGoal|Temple|Go to Temple|100|3|0|300

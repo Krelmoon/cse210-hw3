@@ -1,0 +1,4 @@
+200
+SimpleGoal|Eat at Luk's|Have some scallops at Luk's|100|False
+EternalGoal|Pray|Pray every day|50
+ChecklistGoal|Temple|Go to Templs|100|3|2|300
